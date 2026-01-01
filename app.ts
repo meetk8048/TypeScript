@@ -123,16 +123,41 @@
 
 
 //********************marging interfaces
-interface Book{
-    name: string;
-    price: number;
-}
-interface Book {
-    size: number;
+// interface Book{
+//     name: string;
+//     price: number;
+// }
+// interface Book {
+//     size: number;
+// }
+
+// const book: Book = {
+//     name: 'The Great Gatsby',
+//     price: 1200,
+//     size: 300,
+// }
+
+// type Book = {
+//     name: string;
+//     price: number;
+// }
+// type Book = {
+//     size: number;
+// }
+
+// type SanitizedString = string;
+// type EvenNumber = number;
+
+//**********Unions
+type ID = string | number;
+function printId(id: ID) {
+    //********Narrowing
+    if (typeof id === "string") {
+        console.log(id.toUpperCase());
+    } else {
+        console.log(id);
+    }
 }
 
-const book: Book = {
-    name: 'The Great Gatsby',
-    price: 1200,
-    size: 300,
-}
+printId(123);
+printId("ABC123");
