@@ -122,4 +122,17 @@
 // };
 
 
+//********************marging interfaces
+interface Book{
+    name: string;
+    price: number;
+}
+interface Book {
+    size: number;
+}
 
+const book: Book = {
+    name: 'The Great Gatsby',
+    price: 1200,
+    size: 300,
+}
