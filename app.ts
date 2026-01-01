@@ -6,13 +6,22 @@
 
 // console.log(calculate(num1,3));
 
-2
-function getTotal(numbers:Array<number>): number {
-    return numbers.reduce((acc, item) => {
-        return acc + item;
-    }, 0);
-}
+// 2
+// function getTotal(numbers:Array<number>): number {
+//     return numbers.reduce((acc, item) => {
+//         return acc + item;
+//     }, 0);
+// }
 
-console.log(getTotal([1, 2, 3]));
+// console.log(getTotal([1, 2, 3]));
+
+//3
+// const user = {
+//     fristName: 'Meet',
+//     lastName: 'Patel',
+//     role: 'Admin',
+// };
+
+// console.log(user);
 
 
