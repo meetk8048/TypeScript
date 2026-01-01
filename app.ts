@@ -162,9 +162,33 @@
 // printId(123);
 // printId("ABC123");
 
-function getFristThree(x: string | number[] ) {
-    return x.slice(0, 3);
-}
+// function getFristThree(x: string | number[] ) {
+//     return x.slice(0, 3);
+// }
 
-console.log(getFristThree("HelloWorld"));
-console.log(getFristThree([1, 2, 3, 4, 5]));
+// console.log(getFristThree("HelloWorld"));
+// console.log(getFristThree([1, 2, 3, 4, 5]));
+
+//**********Generics
+function logString(arg: string){
+    console.log(arg);
+    return arg;
+}
+function logNumber(arg: number) {
+    console.log(arg);
+    return arg;
+}
+function logArray(arg: any[]) {
+    console.log(arg);
+    return arg;
+}
+logString("Hello TypeScript");
+logNumber(12345);
+logArray([1, 2, 3, 4, 5]);
+
+//**********Generic function Code
+function logAnything<T>(arg: T): T {
+    console.log(arg);
+    return arg;
+}
+logAnything("Hello Generics");
