@@ -38,3 +38,17 @@ const user : User = {
     
 };
 
+function login(userData: User) {
+    return userData;
+}
+
+
+const user  = {
+    name: 'Meet',
+    age: 23,
+    
+};
+
+
+console.log(login(user));
+
