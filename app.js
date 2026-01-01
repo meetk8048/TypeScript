@@ -8,7 +8,7 @@
 
 
 function gettTotal(numbers) {
-    return numbers.reduce((acc, curr) => {
+    return number.reduce((acc, item) => {
         return acc + item;
     }, 0);
 }
