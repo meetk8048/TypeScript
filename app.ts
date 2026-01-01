@@ -25,3 +25,16 @@
 // console.log(user);
 
 
+// Type alias 
+type User = {
+    name: string;
+    age: number;
+    address?: string;
+}
+
+const user : User = {
+    name: 'Meet',
+    age: 23,
+    
+};
+
