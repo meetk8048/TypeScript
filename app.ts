@@ -170,25 +170,47 @@
 // console.log(getFristThree([1, 2, 3, 4, 5]));
 
 //**********Generics
-function logString(arg: string){
-    console.log(arg);
-    return arg;
-}
-function logNumber(arg: number) {
-    console.log(arg);
-    return arg;
-}
-function logArray(arg: any[]) {
-    console.log(arg);
-    return arg;
-}
-logString("Hello TypeScript");
-logNumber(12345);
-logArray([1, 2, 3, 4, 5]);
+// function logString(arg: string){
+//     console.log(arg);
+//     return arg;
+// }
+// function logNumber(arg: number) {
+//     console.log(arg);
+//     return arg;
+// }
+// function logArray(arg: any[]) {
+//     console.log(arg);
+//     return arg;
+// }
+// logString("Hello TypeScript");
+// logNumber(12345);
+// logArray([1, 2, 3, 4, 5]);
 
 //**********Generic function Code
-function logAnything<T>(arg: T): T {
-    console.log(arg);
-    return arg;
+// function logAnything<T>(arg: T): T {
+//     console.log(arg);
+//     return arg;
+// }
+// logAnything("Hello Generics");
+
+interface HasAge {
+    age: number;
 }
-logAnything("Hello Generics");
+function getOldest<T extends HasAge>(people :T[]): T {
+    return people.sort((a, b) => b.age - a.age)[0];
+}
+const people = [{ age: 30 }, { age: 25 }, { age: 35 }];
+
+interface Player {
+    name: string;
+    age: number;
+}
+const players = [
+    { name: 'Alice', age: 28 },
+    { name: 'Bob', age: 34 },
+    { name: 'Charlie', age: 22 },
+]
+
+const person = getOldest(people);
+//Generics with interfaces
+person.age;
