@@ -236,14 +236,31 @@
 //     const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`);
 //     return response.json();
 // }
-//********Generic Function 
-const fetchData = async <ResultType>(path: string): Promise<ResultType[]> => {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`);
-    return response.json();
-}
+//********Generic Function
+// const fetchData = async <ResultType>(path: string): Promise<ResultType[]> => {
+//     const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`);
+//     return response.json();
+// }
 
-(async() => {
-    //const posts = await fetchPostData('/posts');
-    const posts = await fetchData<IPost>('/posts');
-    posts[0].
-})();
+// (async() => {
+//     const posts = await fetchPostData('/posts');
+//     const posts = await fetchData<IPost>('/posts');
+//     posts[0].
+// })();
+
+//**********Structural typing/ Duck Typing
+interface Icreadential{
+    username: string;
+    password: string;
+    isAdmin?: boolean;
+}
+function login(credentials: Icreadential): boolean {
+    console.log(credentials);
+    return true;    
+}
+const user = {
+    username: 'meet',
+    password: '12345',
+    isAdmin: true,
+}
+login(user);
