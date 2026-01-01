@@ -25,30 +25,35 @@
 // console.log(user);
 
 
-// Type alias 
-type User = {
-    name: string;
-    age: number;
-    address?: string;
-}
+// Type alias
+// type User = {
+//     name: string;
+//     age: number;
+//     address?: string;
+// }
 
-const user : User = {
-    name: 'Meet',
-    age: 23,
+// const user : User = {
+//     name: 'Meet',
+//     age: 23,
     
-};
+// };
 
-function login(userData: User) {
-    return userData;
-}
+// function login(userData: User) {
+//     return userData;
+// }
 
 
-const user  = {
-    name: 'Meet',
-    age: 23,
+// const user  = {
+//     name: 'Meet',
+//     age: 23,
     
-};
+// };
 
 
-console.log(login(user));
+// console.log(login(user));
 
+
+//Customtype alias
+type ID = string | number;
+
+const userId: ID = 1234;
