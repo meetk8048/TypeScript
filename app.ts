@@ -193,24 +193,57 @@
 // }
 // logAnything("Hello Generics");
 
-interface HasAge {
-    age: number;
-}
-function getOldest<T extends HasAge>(people :T[]): T {
-    return people.sort((a, b) => b.age - a.age)[0];
-}
-const people = [{ age: 30 }, { age: 25 }, { age: 35 }];
+// interface HasAge {
+//     age: number;
+// }
+// function getOldest<T extends HasAge>(people :T[]): T {
+//     return people.sort((a, b) => b.age - a.age)[0];
+// }
+// const people = [{ age: 30 }, { age: 25 }, { age: 35 }];
 
-interface Player {
-    name: string;
-    age: number;
-}
-const players = [
-    { name: 'Alice', age: 28 },
-    { name: 'Bob', age: 34 },
-    { name: 'Charlie', age: 22 },
-]
+// interface Player {
+//     name: string;
+//     age: number;
+// }
+// const players = [
+//     { name: 'Alice', age: 28 },
+//     { name: 'Bob', age: 34 },
+//     { name: 'Charlie', age: 22 },
+// ]
 
-const person = getOldest(people);
-//Generics with interfaces
-person.age;
+// const person = getOldest(people);
+//**********Generics with interfaces
+// person.age;
+
+
+//********Real project example
+// interface IPost {
+//     title: string;
+//     id: number;
+//     description: string;
+// }
+// interface IUser {
+//     id: number;
+//     name: string;
+//     age: number;
+// }
+
+// const fetchPostData = async (path: string): Promise<IPost[]> => {
+//     const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`);
+//     return response.json();
+// }
+// const fetchUserData = async (path: string): Promise<IUser[]> => {
+//     const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`);
+//     return response.json();
+// }
+//********Generic Function 
+const fetchData = async <ResultType>(path: string): Promise<ResultType[]> => {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/${path}`);
+    return response.json();
+}
+
+(async() => {
+    //const posts = await fetchPostData('/posts');
+    const posts = await fetchData<IPost>('/posts');
+    posts[0].
+})();
