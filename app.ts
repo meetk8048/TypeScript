@@ -54,6 +54,40 @@
 
 
 //Customtype alias
-type ID = string | number;
+// type ID = string | number;
+// const userId: ID = 1234;
 
-const userId: ID = 1234;
+
+
+//Interfaces
+interface Trasaction {
+    payerAccountNumber: number;
+    payeeAccountNumber: number;
+}
+
+interface BankAccount {
+    accountNumber: number;
+    accountHolderName: string;
+    balance: number;
+    isActive: boolean;
+    transactions: Trasaction[];
+}
+const transactions1: Trasaction = {
+    payerAccountNumber: 123456,
+    payeeAccountNumber: 789012
+}
+const transactions2: Trasaction = {
+    payerAccountNumber: 345678,
+    payeeAccountNumber: 901234
+}
+
+const bankAccount: BankAccount = {
+    accountNumber: 123456,
+    accountHolderName: "Meet Patel",
+    balance: 1000,
+    isActive: true,
+    transactions: [
+        transactions1,
+        transactions2
+    ]
+}
