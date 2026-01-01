@@ -266,17 +266,18 @@
 // login(user);
 
 //*********
-interface IAuth {
-    username: string;
-    password: string;
-    login(username: string, password: string): void;
-}
+// interface IAuth {
+//     username: string;
+//     password: string;
+//     login(username: string, password: string): void;
+// }
 
-const auth: IAuth = {
-    username: 'meet',
-    password: '12345',
-    login(username: string, password: string) { 
-        return true;
-    }
+// const auth: IAuth = {
+//     username: 'meet',
+//     password: '12345',
+//     login(username: string, password: string) {
+//         return true;
+//     }
+// }
 
-}
+//**********Inferenc
