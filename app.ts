@@ -249,18 +249,34 @@
 // })();
 
 //**********Structural typing/ Duck Typing
-interface Icreadential{
+// interface Icreadential{
+//     username: string;
+//     password: string;
+//     isAdmin?: boolean;
+// }
+// function login(credentials: Icreadential): boolean {
+//     console.log(credentials);
+//     return true;
+// }
+// const user = {
+//     username: 'meet',
+//     password: '12345',
+//     isAdmin: true,
+// }
+// login(user);
+
+//*********
+interface IAuth {
     username: string;
     password: string;
-    isAdmin?: boolean;
+    login(username: string, password: string): void;
 }
-function login(credentials: Icreadential): boolean {
-    console.log(credentials);
-    return true;    
-}
-const user = {
+
+const auth: IAuth = {
     username: 'meet',
     password: '12345',
-    isAdmin: true,
+    login(username: string, password: string) { 
+        return true;
+    }
+
 }
-login(user);
